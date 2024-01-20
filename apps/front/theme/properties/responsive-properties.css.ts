@@ -11,6 +11,12 @@ export const responseProperties = defineProperties({
   properties: {
     display: ["none", "flex", "block", "inline"],
     flexDirection: ["row", "column"],
+    flex: {
+      full: "1 1 0%",
+      auto: "1 1 auto",
+      initial: "0 1 auto",
+      none: "none",
+    },
     justifyContent: [
       "stretch",
       "flex-start",

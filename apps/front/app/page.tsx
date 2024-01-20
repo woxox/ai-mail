@@ -1,37 +1,31 @@
-'use client';
+"use client";
 
-import clsx from 'clsx';
-import { useState } from 'react';
+import clsx from "clsx";
+import { useState } from "react";
 
-import { Box } from '@/components/atoms/Box';
-import { Button } from '@/components/atoms/Button';
-import { Text } from '@/components/atoms/Text';
-import { baseToken, baseTokenClass, darkThemeClass, lightThemeClass } from '@/theme/theme.css';
+import { Box } from "@/components/atoms/Box";
+import { Button } from "@/components/atoms/Button";
+import { Text } from "@/components/atoms/Text";
+import {
+  baseToken,
+  baseTokenClass,
+  darkThemeClass,
+  lightThemeClass,
+} from "@/theme/theme.css";
 
-import './global-style.css';
+import "./global-style.css";
+import { Sidebar } from "@/components/molecules/Sidebar";
+import { useThemeStore } from "@/store/themeStore";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true);
+  const { darkMode, toggleDarkMode } = useThemeStore();
 
   return (
-    <body className={clsx(baseTokenClass, darkMode ? darkThemeClass : lightThemeClass)}>
+    <div>
       <Box>
-        <Text fontSize="24">darkMode: {String(darkMode)}</Text>
+        <Button onClick={toggleDarkMode}>Dark:{String(darkMode)}</Button>
       </Box>
-      <Box padding="2" display="flex" gap="4">
-        <Button variant="outlined" onClick={() => setDarkMode(!darkMode)}>
-          Button
-        </Button>
-        <Button variant="contained" onClick={() => setDarkMode(!darkMode)}>
-          Button
-        </Button>
-        <Button variant="outlined" disabled>
-          Button
-        </Button>
-        <Button variant="contained" disabled>
-          Button
-        </Button>
-      </Box>
-    </body>
+      <Box width="64"></Box>
+    </div>
   );
 }

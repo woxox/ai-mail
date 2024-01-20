@@ -6,6 +6,8 @@ export const DARK_COLOR_TOKEN = {
   "background.primary": COLOR_PALETTE.zinc600,
   "background.primary.hover": COLOR_PALETTE.zinc700,
   "background.netural": COLOR_PALETTE.zinc700,
+  "background.sidebar.hover": COLOR_PALETTE.zinc700,
+  "background.sidebar.active": COLOR_PALETTE.zinc700,
   // border
   "border.primary": COLOR_PALETTE.zinc700,
   "border.netural": COLOR_PALETTE.zinc600,
